@@ -5,6 +5,8 @@ services:
     image: mybuffalo:latest
     build: .
     container_name: MyBufflo
+    depends_on:
+       - postgresdb
     #command: sh -c "go run ."
     #environment:
     #  - PORT=5000
@@ -12,3 +14,10 @@ services:
        - 0.0.0.0:3000:3000
     #volumes:
     #  - ./go1:/root/go1:cached # <--- This will map ./py1 to /root/py1 inside the container.
+  postgresdb:
+    image: postgres
+    container_name: MyPostgres
+    ports:
+       - 5432:5432
+    environment:
+       POSTGRES_PASSWORD: postgres
