@@ -4,7 +4,7 @@ services:
   buffalo:
     image: mybuffalo:latest
     build: .
-    container_name: MyBufflo
+    container_name: MyBuffalo
     depends_on:
        - postgresdb
     #command: sh -c "go run ."
