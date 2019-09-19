@@ -13,7 +13,8 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && apt install nodej
     && git config --global user.name "My Name" \
     && chmod +x /app/run.sh \
     && cd $GOPATH/src/github.com \
-    && git clone https://github.com/gobuffalo/authrecipe.git
+    && git clone https://github.com/gobuffalo/authrecipe.git \
+    && buffalo new myapp
 
 #COPY api/* $GOPATH/src/github.com/myapp/
 
