@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $GOPATH/src/github.com/coke
+cd $GOPATH/src/github.com/myapp
 
 ADDR=0.0.0.0 buffalo dev
 
