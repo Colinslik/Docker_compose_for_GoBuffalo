@@ -14,7 +14,9 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && apt install nodej
     && chmod +x /app/run.sh \
     && cd $GOPATH/src/github.com \
     && git clone https://github.com/gobuffalo/authrecipe.git \
-    && buffalo new myapp && rm -rf myapp
+    && cd $GOPATH/src/github.com/authrecipe \
+    && buffalo plugins install \
+    && apt-get install -y postgresql-client
 
 #COPY api/* $GOPATH/src/github.com/myapp/
 
@@ -22,4 +24,4 @@ COPY database.yml $GOPATH/src/github.com/authrecipe/database.yml
 
 EXPOSE 3000
 
-CMD ["/bin/bash", "/app/run.sh"]  
+CMD ["/bin/bash", "/app/run.sh"]
