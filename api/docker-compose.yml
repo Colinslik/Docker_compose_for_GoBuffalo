@@ -1,19 +1,14 @@
 version: '3'
 
 services:
-  buffalo:
-    image: mybuffalo:latest
+  authrecipe:
+    image: authrecipe:latest
     build: .
-    container_name: MyBuffalo
+    container_name: Authrecipe
     depends_on:
        - postgresdb
-    #command: sh -c "go run ."
-    #environment:
-    #  - PORT=5000
     ports:
        - 0.0.0.0:3000:3000
-    #volumes:
-    #  - ./go1:/root/go1:cached # <--- This will map ./py1 to /root/py1 inside the container.
   postgresdb:
     image: postgres
     container_name: MyPostgres
@@ -25,3 +20,4 @@ services:
        - postgres-storage:/var/lib/postgresql/data
 volumes:
     postgres-storage:
+
