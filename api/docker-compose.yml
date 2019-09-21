@@ -3,21 +3,20 @@ version: '3'
 services:
   authrecipe:
     image: authrecipe:latest
-    build: .
+    build: ../
     container_name: Authrecipe
     depends_on:
        - postgresdb
     ports:
        - 0.0.0.0:3000:3000
+
   postgresdb:
-    image: postgres
+    image: postgres:latest
     container_name: MyPostgres
     ports:
        - 5432:5432
     environment:
        POSTGRES_PASSWORD: postgres
     volumes:
-       - postgres-storage:/var/lib/postgresql/data
-volumes:
-    postgres-storage:
+       - $PWD/mydb/data:/var/lib/postgresql/data
 
