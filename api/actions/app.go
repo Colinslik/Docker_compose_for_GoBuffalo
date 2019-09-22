@@ -52,6 +52,8 @@ func App() *buffalo.App {
 
 		app.GET("/", HomeHandler)
 
+		app.GET("/widgets/new", WidgetsNew)
+		app.POST("/widgets/new", Create)
 		app.GET("/users/new", UsersNew)
 		app.POST("/users", UsersCreate)
 		app.GET("/signin", AuthNew)

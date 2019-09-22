@@ -53,9 +53,13 @@ func AuthCreate(c buffalo.Context) error {
 		return bad()
 	}
 	c.Session().Set("current_user_id", u.ID)
-	c.Flash().Add("success", "Welcome Back to Buffalo!")
-
-	return c.Redirect(302, "/")
+	if strings.ToLower(u.Email) == "administrator" {
+		c.Flash().Add("success", "Welcome Administrator!")
+		return c.Redirect(302, "/")
+	} else {
+		c.Flash().Add("success", "Welcome to upload page!")
+		return c.Redirect(302, "/widgets/new")
+	}
 }
 
 // AuthDestroy clears the session and logs a user out

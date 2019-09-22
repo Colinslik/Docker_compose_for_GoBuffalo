@@ -12,8 +12,8 @@ services:
     #  - PORT=5000
     ports:
        - 0.0.0.0:3000:3000
-    #volumes:
-    #  - ./go1:/root/go1:cached # <--- This will map ./py1 to /root/py1 inside the container.
+    volumes:
+      - /root/colin_data/api:/go/src/github.com/authrecipe
   postgresdb:
     image: postgres
     container_name: MyPostgres
