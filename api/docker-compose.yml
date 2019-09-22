@@ -3,7 +3,7 @@ version: '3'
 services:
   authrecipe:
     image: authrecipe:latest
-    build: ../
+    build: .
     container_name: Authrecipe
     depends_on:
        - postgresdb

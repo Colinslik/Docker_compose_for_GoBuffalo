@@ -5,24 +5,24 @@ WorkDIR=$PWD
 
 function start() {
 
-    cd $WorkDIR/mydb
+    #cd $WorkDIR/mydb
 
     docker-compose up -d
 
-    cd $WorkDIR/myapi
+    #cd $WorkDIR/myapi
 
-    docker-compose up -d
+    #docker-compose up -d
 }
 
 function stop() {
 
-    cd $WorkDIR/myapi
+    #cd $WorkDIR/myapi
 
     docker-compose down
 
-    cd $WorkDIR/mydb
+    #cd $WorkDIR/mydb
 
-    docker-compose down
+    #docker-compose down
 }
 
 
