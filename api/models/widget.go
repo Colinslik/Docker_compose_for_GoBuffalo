@@ -7,12 +7,12 @@ import (
   "path/filepath"
   "time"
 
+  "github.com/gobuffalo/uuid"
   "github.com/gobuffalo/buffalo/binding"
   "github.com/gobuffalo/pop"
   "github.com/markbates/validate"
   "github.com/markbates/validate/validators"
   "github.com/pkg/errors"
-  "github.com/satori/go.uuid"
 )
 
 type Widget struct {

@@ -52,13 +52,14 @@ func App() *buffalo.App {
 
 		app.GET("/", HomeHandler)
 
-		app.GET("/widgets/new", WidgetsNew)
-		app.POST("/widgets/new", Create)
+		//app.GET("/widgets/new", New)
+		//app.POST("/widgets/new", Create)
 		app.GET("/users/new", UsersNew)
 		app.POST("/users", UsersCreate)
 		app.GET("/signin", AuthNew)
 		app.POST("/signin", AuthCreate)
 		app.DELETE("/signout", AuthDestroy)
+		app.Resource("/widgets", WidgetsResource{})
 		app.ServeFiles("/", assetsBox) // serve files from the public directory
 	}
 
